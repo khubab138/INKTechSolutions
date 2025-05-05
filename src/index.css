@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+* {
+    /* outline: 1px solid red;  */
+  }
+  
+html,
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    position: absolute;
+    top: 0;
+    z-index: -2;
+    height: 100%;
+    width: 100vw;
+    /* background: gainsboro; */
+    /* background-color: rgb(29, 29, 29);
+    background-image: radial-gradient(
+      ellipse 80% 80% at 50% -20%,
+      rgba(72, 72, 72, 0.726),
+      rgba(1, 1, 1, 0)
+) */
+
+      } 
+@layer utilities{
+    @keyframes blink {
+        0%, 100%{
+            opacity: 1;        }
+        50%{
+            opacity: 0;
+        }
+        
+    }
+    @keyframes loading {
+        0%{
+            transform: translateX(-100%);
+        }
+        100%{
+            transform: translateX(250%);
+        }
+        
+    }
+    .animate-blink{
+        animation: blink 1s ease-in-out infinite;
+    }
+    .animate-loading-bar{
+        animation: loading 3s ease-in-out infinite;
+    }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+  
+  .animate-blink {
+    animation: blink 1s step-end infinite;
+  }
+  
+  .reveal{
+    opacity: 0;
+    transform: translateY(20px) ;
+    transition: opacity 0.7s  ease, transform 0.7s ease  ;
+  }
+
+  .reveal.visible{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+  .glow-text {
+    /* color: #8b5cf6; */
+    /* color: whi; */
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow:
+    0 0 20px rgba(59,130,246,0.9),
+    0 0 40px rgba(59,130,246,0.6),
+    0 0 80px rgba(59,130,246,0.4),
+    0 0 120px rgba(59,130,246,0.2)
+  
+  }
+
